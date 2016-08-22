@@ -6,6 +6,7 @@ html(lang="en")
 
     // build:remove 
     link(href="stage/css/stage.css", rel="stylesheet")
+    link(href="css/shared-svg.css", rel="stylesheet")
     // endbuild
     
     // build:css style.css
@@ -13,13 +14,25 @@ html(lang="en")
     // endbuild
 
   body
-    p The jade file `stage/index.jade` serves as a staging area for your library.
-
+    .modal-toggle("data-modal"="verify-delete") load verifty delete
+    
     // build:remove 
-    script(src="bower-libs/jquery/dist/jquery.js")
     script(src="bower-libs/jade/runtime.js")
+    script(src="bower-libs/jquery/dist/jquery.js")
+    script(src="bower-libs/shadow-icons/rel/app.js")
+    script(src="bower-libs/velocity/velocity.min.js")
+    
+    //- 
+    script(src="js/shared-svg.js")
+    
+    //- 
+    script(src="https://use.typekit.net/cqd5kth.js")
+    script(type="text/javascript") try{Typekit.load({ async: true });}catch(e){}
+    
+    //- 
+    script(src="http://localhost:35729/livereload.js")
     // endbuild
-
+    
     // build:js app.js
     script(src="js/main.js")
     // endbuild
@@ -28,8 +41,6 @@ html(lang="en")
     script(src="stage/js/stage.js")
     // endbuild
     
-    
-    
-    // build:remove 
-    script(src="http://localhost:35729/livereload.js")
-    // endbuild
+    //- 
+    script(type="text/javascript").
+      init();

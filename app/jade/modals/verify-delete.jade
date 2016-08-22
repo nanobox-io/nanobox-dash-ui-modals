@@ -1,0 +1,9 @@
+#verify-delete-modal.body
+  h4 Delete&nbsp;<strong>#{name}</strong>?
+  p= instructions
+  .input
+    input(placeholder=name)
+
+  //- 
+  form#verify-delete(action=path, method="DELETE").nodirrty
+    button.delete.disabled.lifecycle
