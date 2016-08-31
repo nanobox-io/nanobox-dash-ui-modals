@@ -1,12 +1,15 @@
 
 # modals
-VerifyDeleteModal = require 'modals/verify-delete'
+DeleteVerificationModal = require 'modals/delete-verification-modal'
+DeleteConfirmationModal = require 'modals/delete-confirmation-modal'
+ActionConfirmationModal = require 'modals/action-confirmation-modal'
+UpgradeRequiredModal    = require 'modals/upgrade-required-modal'
 
 #
 class Modals
 
   # builds the initial state of the component
-  constructor : (@$el, @options={}) -> # does nothing...
+  constructor : (@$el) -> # does nothing...
 
   #
   build : () ->
@@ -31,20 +34,24 @@ class Modals
     @$shield.click (e) => @hide()
 
   # loadAndShow
-  loadAndShow : (options={}) => @load(options); @show()
+  loadAndShow : (@options={}) => @load(@options); @show()
 
   # load will load a new modal to be shown
-  load : (options={}) =>
+  load : (@options={}) =>
 
     # empty out the previous modal
     @$modal.empty()
 
     # create the desired modal
-    modal = switch options.modal
-      when "verify-delete" then new VerifyDeleteModal @$modal, options.modalOptions
+    modal = switch @options.modal
+      when "delete-verification-modal" then new DeleteVerificationModal @$modal, @options, @
+      when "delete-confirmation-modal" then new DeleteConfirmationModal @$modal, @options, @
+      when "action-confirmation-modal" then new ActionConfirmationModal @$modal, @options, @
+      when "upgrade-required-modal"    then new UpgradeRequiredModal @$modal, @options, @
+      else console.warn("Warning: #{options.modal} not found!")
 
     # build the new modal
-    modal.build()
+    modal?.build()
 
   # show will show whatever modal is currently loaded
   show : () =>
@@ -58,8 +65,11 @@ class Modals
 
     # attach the modal
     @$body.append(@$modal)
-    castShadows(@$body)
+    castShadows(@$modal)
     @$modal.velocity {opacity:1}, {duration:300}
+
+    #
+    @options.onOpen()
 
   #
   hide : () =>
@@ -72,6 +82,9 @@ class Modals
 
     # enable page scrolling
     @$body.removeClass("no-scroll")
+
+    #
+    @options.onClose()
 
 #
 window.nanobox ||= {}

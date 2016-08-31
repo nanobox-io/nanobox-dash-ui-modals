@@ -14,7 +14,24 @@ html(lang="en")
     // endbuild
 
   body
-    .modal-toggle("data-modal"="verify-delete") load verifty delete
+  
+    //- 
+    .modal-toggle("data-modal"="upgradeRequired-authorized") Upgrade Required (authorized)
+    .modal-toggle("data-modal"="upgradeRequired-unauthorized") Upgrade Required (unauthorized)
+    
+    //- 
+    .modal-toggle("data-modal"="deleteVerification-app") Delete App
+    .modal-toggle("data-modal"="deleteVerification-dataComponent") Delete Data Component
+    
+    //- 
+    .modal-toggle("data-modal"="deleteConfirmation-bundle") Deactivate SSL/TLS Bundle
+    .modal-toggle("data-modal"="deleteConfirmation-account") Delete Account
+    
+    //- 
+    .modal-toggle("data-modal"="actionConfirmation-hostReboot") Reboot Host
+    .modal-toggle("data-modal"="actionConfirmation-componentRefresh") Refresh Component
+    .modal-toggle("data-modal"="actionConfirmation-componentReboot") Reboot Component
+    .modal-toggle("data-modal"="actionConfirmation-scaleUp") Scale Up
     
     // build:remove 
     script(src="bower-libs/jade/runtime.js")

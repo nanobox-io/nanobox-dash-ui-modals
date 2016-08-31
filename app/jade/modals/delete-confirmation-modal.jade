@@ -1,0 +1,9 @@
+#delete-confirmation-modal.modal
+  .header= header
+  .content !{content}
+
+  //- 
+  form#delete-confirmation(action=action, method=method).nodirrty
+    .delete-zone
+      a.cancel(href="#") Cancel
+      button.delete.lifecycle("data-content"=callToAction)

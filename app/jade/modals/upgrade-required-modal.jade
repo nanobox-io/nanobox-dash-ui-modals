@@ -1,0 +1,11 @@
+#upgrade-required-modal.modal
+  .header= header
+  .content !{content}
+
+  //- 
+  .save-zone
+    a.cancel(href="#") Cancel
+    unless path == undefined
+      a(href=path)
+        button.save.lifecycle("data-content"=callToAction)
+          img.shadow-icon("data-src"="check-mark")

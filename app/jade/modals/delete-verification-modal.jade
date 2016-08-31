@@ -1,0 +1,11 @@
+#delete-verification-modal.modal
+  .header= header
+  .content !{content}
+  .input
+    input(placeholder="type '#{token}' to confirm")
+
+  //- 
+  form#delete-verification(action=action, method=method).nodirrty
+    .delete-zone
+      a.cancel(href="#") Cancel
+      button.delete.lifecycle.disabled("data-content"=callToAction)
