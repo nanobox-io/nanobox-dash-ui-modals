@@ -22,8 +22,11 @@ module.exports = class DeleteVerificationModal
     #
     $button = @$node.find("button.delete")
 
-    # delete modals
+    #
     @$node.find("input").keyup (e) =>
       if @options.token == e.currentTarget.value
         $button.removeClass("disabled")
       else $button.addClass("disabled")
+
+    #
+    $button.click (e) => @options.onSubmit?()

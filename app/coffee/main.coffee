@@ -69,7 +69,7 @@ class Modals
     @$modal.velocity {opacity:1}, {duration:300}
 
     #
-    @options.onOpen()
+    @options.onOpen?()
 
   #
   hide : () =>
@@ -84,7 +84,7 @@ class Modals
     @$body.removeClass("no-scroll")
 
     #
-    @options.onClose()
+    @options.onClose?()
 
 #
 window.nanobox ||= {}

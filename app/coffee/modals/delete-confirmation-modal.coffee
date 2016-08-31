@@ -20,4 +20,4 @@ module.exports = class DeleteConfirmationModal
     @$node.find(".cancel").click (e) => @main.hide()
 
     #
-    @$node.find("button").click (e) => @options.onSubmit()
+    @$node.find("button").click (e) => @options.onSubmit?()
