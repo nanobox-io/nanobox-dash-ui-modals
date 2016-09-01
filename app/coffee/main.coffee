@@ -86,6 +86,19 @@ class Modals
     #
     @options.onClose?()
 
+  #
+  submit : (options={}) => @_doXHR({url:options.action, type:options.method})
+
+  #
+  _doXHR: (options={}) =>
+    $.ajax
+      url: options.url
+      type: options.type
+      data: {}
+      done: (data) => @options.onSubmit?()
+      # fail: (data) =>
+      always: (data) => @hide()
+
 #
 window.nanobox ||= {}
 nanobox.Modals = Modals

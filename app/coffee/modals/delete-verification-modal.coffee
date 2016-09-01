@@ -7,9 +7,9 @@ module.exports = class DeleteVerificationModal
   constructor: (@$el, @options={}, @main) ->
 
     #
-    if @options.callToAction == undefined
-      @options.callToAction = "Delete"
+    @options.callToAction ||= "Delete"
 
+    #
     @$node = $(view(@options))
     @$el.append @$node
 
@@ -29,4 +29,4 @@ module.exports = class DeleteVerificationModal
       else $button.addClass("disabled")
 
     #
-    $button.click (e) => @options.onSubmit?()
+    $button.click (e) => @main.submit(@options)

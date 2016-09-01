@@ -7,9 +7,9 @@ module.exports = class UpgradeRequiredModal
   constructor: (@$el, @options={}, @main) ->
 
     #
-    if @options.callToAction == undefined
-      @options.callToAction = "Continue"
+    @options.callToAction ||= "Continue"
 
+    #
     @$node = $(view(@options))
     @$el.append @$node
 
@@ -20,4 +20,4 @@ module.exports = class UpgradeRequiredModal
     @$node.find(".cancel").click (e) => @main.hide()
 
     #
-    @$node.find("button").click (e) => @options.onSubmit?()
+    @$node.find("button.save").click (e) => @main.submit(@options)

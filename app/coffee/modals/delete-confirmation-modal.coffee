@@ -7,9 +7,9 @@ module.exports = class DeleteConfirmationModal
   constructor: (@$el, @options={}, @main) ->
 
     #
-    if @options.callToAction == undefined
-      @options.callToAction = "Delete"
+    @options.callToAction ||= "Delete"
 
+    #
     @$node = $(view(@options))
     @$el.append @$node
 
@@ -20,4 +20,4 @@ module.exports = class DeleteConfirmationModal
     @$node.find(".cancel").click (e) => @main.hide()
 
     #
-    @$node.find("button").click (e) => @options.onSubmit?()
+    @$node.find("button.delete").click (e) => @main.submit(@options)
