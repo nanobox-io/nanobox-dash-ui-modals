@@ -97,6 +97,7 @@ class Modals
       type: options.type
       success: () =>
         console.log "SUCCESS!"
+        @options.onSubmit?()
       done: () =>
         console.log "DONE!"
         @options.onSubmit?()
@@ -106,6 +107,7 @@ class Modals
         console.log "FAIL!"
       complete: () =>
         console.log "COMPLETE!"
+        @hide()
       always: () =>
         console.log "ALWAYS!"
         @hide()
