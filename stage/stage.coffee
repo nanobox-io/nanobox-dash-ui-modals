@@ -4,9 +4,11 @@ window.init = () ->
   modals = new nanobox.Modals $("body")
   modals.build()
 
-  onOpen = () -> console.log "OPENED!"
-  onSubmit = () -> console.log "SUBMITTED!"
-  onClose = () -> console.log "CLOSED!"
+  onOpen =    () -> console.log "OPENED!"
+  onDone =    () -> console.log "DONE!"
+  onFail =    () -> console.log "FAILED!"
+  onAlways =  () -> console.log "ALWAYS!"
+  onClose =   () -> console.log "CLOSED!"
 
   options = {
 
@@ -16,19 +18,13 @@ window.init = () ->
         modal:    "upgrade-required-modal",
         header:   "Plan Upgrade Required",
         content:  "This action requires the [plan name] plan. Go to your app’s billing section to upgrade your plan.",
-        path:     "#",
-        onOpen:   onOpen,
-        onSubmit: onSubmit,
-        onClose:  onClose
+        path:     "#"
       },
       unauthorized: {
         modal:    "upgrade-required-modal",
         header:   "Plan Upgrade Required",
         content:  "This action requires the [plan name] plan, but your role on this app does not allow you to upgrade the plan.",
-        path:     undefined,
-        onOpen:   onOpen,
-        onSubmit: onSubmit,
-        onClose:  onClose
+        path:     undefined
       }
     },
 
@@ -40,10 +36,7 @@ window.init = () ->
         content:  "Deleting this app will decommission all associated host machines and remove all code and data. Once complete, application data cannot be recovered. Are you sure you want to delete this app?",
         action:   "/some/path",
         method:   "DELETE",
-        token:    "app.name",
-        onOpen:   onOpen,
-        onSubmit: onSubmit,
-        onClose:  onClose
+        token:    "app.name"
       },
       dataComponent: {
         modal:    "delete-verification-modal",
@@ -51,10 +44,7 @@ window.init = () ->
         content:  "Deleting this component will remove all stored data. Once complete, this data cannot be recovered. Are you sure you want to delete this component?",
         action:   "/some/path",
         method:   "DELETE",
-        token:    "data-component.name",
-        onOpen:   onOpen,
-        onSubmit: onSubmit,
-        onClose:  onClose
+        token:    "data-component.name"
       }
     },
 
@@ -65,20 +55,14 @@ window.init = () ->
         header:   "Deactivate SSL/TLS Bundle",
         content:  "Are you sure you want to deactivate this bundle? HTTPS requests to the associated domain will fail or result in a security warning until a new bundle is activated.",
         action:   "/some/path",
-        method:   "PATCH",
-        onOpen:   onOpen,
-        onSubmit: onSubmit,
-        onClose:  onClose
+        method:   "PATCH"
       },
       account: {
         modal:    "delete-confirmation-modal",
         header:   "Delete Account",
         content:  "We're sorry to see you go. Are you certain you'd like to delete your account? If there's something we can do better, we'd love to know at <a mailto=\"hello@nanobox.io\">hello@nanobox.io.</a>",
         action:   "/some/path",
-        method:   "DELETE",
-        onOpen:   onOpen,
-        onSubmit: onSubmit,
-        onClose:  onClose
+        method:   "DELETE"
       }
     },
 
@@ -91,10 +75,7 @@ window.init = () ->
         action:       "/some/path",
         method:       "PATCH",
         callToAction: "Reboot",
-        token:        "host.name",
-        onOpen:       onOpen,
-        onSubmit:     onSubmit,
-        onClose:      onClose
+        token:        "host.name"
       },
       componentRefresh: {
         modal:        "action-confirmation-modal",
@@ -103,10 +84,7 @@ window.init = () ->
         action:       "/some/path",
         method:       "PATH",
         callToAction: "Refresh",
-        token:        "component.name",
-        onOpen:       onOpen,
-        onSubmit:     onSubmit,
-        onClose:      onClose
+        token:        "component.name"
       },
       componentReboot: {
         modal:        "action-confirmation-modal",
@@ -115,10 +93,7 @@ window.init = () ->
         action:       "/some/path",
         method:       "PATH",
         callToAction: "Reboot",
-        token:        "component.name",
-        onOpen:       onOpen,
-        onSubmit:     onSubmit,
-        onClose:      onClose
+        token:        "component.name"
       },
       scaleUp: {
         modal:        "action-confirmation-modal",
@@ -127,10 +102,7 @@ window.init = () ->
         action:       "/some/path",
         method:       "PATH",
         callToAction: "Scale",
-        token:        "component.name",
-        onOpen:       onOpen,
-        onSubmit:     onSubmit,
-        onClose:      onClose
+        token:        "component.name"
       }
     }
   }

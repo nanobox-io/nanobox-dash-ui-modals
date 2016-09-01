@@ -12,7 +12,9 @@ options: {
   content:  "This action requires the [plan name] plan. Go to your app’s billing section to upgrade your plan.",
   path:     "#",
   onOpen:   onOpen,
-  onSubmit: onSubmit,
+  onDone:   onDone,
+  onFail:   onFail,
+  onAlways: onAlways,
   onClose:  onClose
 }
 
@@ -35,7 +37,9 @@ modals.loadAndShow(options)
 | action="" | Form action (select modals only) |
 | method="" | Form method (select modals only) |
 | onOpen="" | Called when modal opens |
-| onSubmit="" | Called when modal "submits" |
+| onDone="" | Called on the modal ajax "done" |
+| onFail="" | Called on the modal ajax "fail" |
+| onAlways="" | Called on the modal ajax "always" |
 | onClose="" | Called when modal closes |
 
 NOTE: if a modal has a path it wont have an action or method and vice versa
