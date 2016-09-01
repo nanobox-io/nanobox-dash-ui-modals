@@ -95,7 +95,6 @@ window.init = () ->
         onOpen:       onOpen,
         onSubmit:     onSubmit,
         onClose:      onClose
-
       },
       componentRefresh: {
         modal:        "action-confirmation-modal",
@@ -108,7 +107,6 @@ window.init = () ->
         onOpen:       onOpen,
         onSubmit:     onSubmit,
         onClose:      onClose
-
       },
       componentReboot: {
         modal:        "action-confirmation-modal",
@@ -121,7 +119,6 @@ window.init = () ->
         onOpen:       onOpen,
         onSubmit:     onSubmit,
         onClose:      onClose
-
       },
       scaleUp: {
         modal:        "action-confirmation-modal",
@@ -134,7 +131,6 @@ window.init = () ->
         onOpen:       onOpen,
         onSubmit:     onSubmit,
         onClose:      onClose
-
       }
     }
   }
