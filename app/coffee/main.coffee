@@ -91,13 +91,24 @@ class Modals
 
   #
   _doXHR: (options={}) =>
+    console.log "DO!"
     $.ajax
       url: options.url
       type: options.type
-      data: {}
-      done: (data) => @options.onSubmit?()
-      # fail: (data) =>
-      always: (data) => @hide()
+      success: () =>
+        console.log "SUCCESS!"
+      done: () =>
+        console.log "DONE!"
+        @options.onSubmit?()
+      error: () =>
+        console.log "ERROR!"
+      fail: () =>
+        console.log "FAIL!"
+      complete: () =>
+        console.log "COMPLETE!"
+      always: () =>
+        console.log "ALWAYS!"
+        @hide()
 
 #
 window.nanobox ||= {}
