@@ -91,12 +91,12 @@ class Modals
 
   #
   _doXHR: (options={}) =>
-    $.ajax
-      url: options.url
+    $.ajax(
       type: options.type
-      done:   () => @options.onDone?()
-      fail:   () => @options.onFail?()
-      always: () => @options.onAlways?(); @hide()
+      url:  options.url
+    ).done(  -> @options.onDone?()
+    ).fail(  -> @options.onFail?()
+    ).always -> @options.onAlways?(); @hide()
 
 #
 window.nanobox ||= {}
