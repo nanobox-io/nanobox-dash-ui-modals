@@ -94,9 +94,9 @@ class Modals
     $.ajax(
       type: options.type
       url:  options.url
-    ).done(  -> @options.onDone?()
-    ).fail(  -> @options.onFail?()
-    ).always -> @options.onAlways?(); @hide()
+    ).done(  => @options.onDone?()
+    ).fail(  => @options.onFail?()
+    ).always => @options.onAlways?(); @hide()
 
 #
 window.nanobox ||= {}
