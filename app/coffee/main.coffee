@@ -9,10 +9,7 @@ UpgradeRequiredModal    = require 'modals/upgrade-required-modal'
 class Modals
 
   # builds the initial state of the component
-  constructor : (@$el) -> # does nothing...
-
-  #
-  build : () ->
+  constructor : ($el) ->
 
     # get all modal DOM elements
     @$body    = $(document).find("body")
@@ -33,10 +30,7 @@ class Modals
     # clickable area for closing the modal
     @$shield.click (e) => @hide()
 
-  # loadAndShow
-  loadAndShow : (@options={}) => @load(@options); @show()
-
-  # load will load a new modal to be shown
+  # load will load and show a new modal
   load : (@options={}) =>
 
     # empty out the previous modal
@@ -52,6 +46,12 @@ class Modals
 
     # build the new modal
     modal?.build()
+
+    # show the modal
+    @show()
+
+    # return the modal
+    return @
 
   # show will show whatever modal is currently loaded
   show : () =>
@@ -87,17 +87,9 @@ class Modals
     @options.onClose?()
 
   #
-  submit : (options={}) => @_doXHR({url:options.action, type:options.method})
+  submit : (options={}) => @options.onSubmit?(); @hide()
 
-  #
-  _doXHR: (options={}) =>
-    $.ajax(
-      type: options.type
-      url:  options.url
-    ).done(  => @options.onDone?()
-    ).fail(  => @options.onFail?()
-    ).always => @options.onAlways?(); @hide()
 
 #
 window.nanobox ||= {}
-nanobox.Modals = Modals
+nanobox.Modals = new Modals($('body'))
