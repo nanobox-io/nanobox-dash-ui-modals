@@ -33,3 +33,4 @@ These are options that specific modals have that are outside the scope of all ot
 | Option=default | Description | Modals |
 |---|---|---|
 | authorized="" | Is a user authorized to take action | upgrade-required
+| token="" | A value that needs to be typed to complete the modal action | delete-verification

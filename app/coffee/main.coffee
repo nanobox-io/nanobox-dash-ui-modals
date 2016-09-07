@@ -9,10 +9,9 @@ UpgradeRequiredModal    = require 'modals/upgrade-required-modal'
 class Modals
 
   # builds the initial state of the component
-  constructor : ($el) ->
+  constructor : (@$body) ->
 
     # get all modal DOM elements
-    @$body    = $(document).find("body")
     @$shield  = $("<div id=\"modalshield\" class=\"shield\" style=\"opacity:0;\"></div>")
     @$modal   = $("
       <div id=\"nanobox-dash-ui-modal\" style=\"opacity:0;\">
