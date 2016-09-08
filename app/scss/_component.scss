@@ -4,7 +4,7 @@ $modal_index: 100000;
 #modalshield              {}
 
 //
-#nanobox-dash-ui-modal    {@include transition(); @include align('center'); @include font-size(14px); position:fixed; z-index:$modal_index; width:600px; padding:34px 42px 26px; background:$dashboard_5; overflow:hidden; text-align:left;
+#nanobox-dash-ui-modal    {@include transition(); @include align('center'); @include font-size(14px); position:fixed; z-index:$modal_index; width:600px; padding:39px 36px 36px; background:white; overflow:hidden; text-align:left;
 
   //
   .close                  {position:absolute; top:0px; right:0px; margin:10px; cursor:pointer;
