@@ -2,7 +2,7 @@
   "name": "modals",
   "version": "0.0.15",
   "dependencies": {
-    "jquery": "*",
+    "jquery": "^3.1.1",
     "velocity": "~1.1.0",
     "shadow-icons": "tolmark12/shadow-icons-js"
   },
