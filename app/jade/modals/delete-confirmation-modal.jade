@@ -1,8 +1,11 @@
 #delete-confirmation-modal.modal
+  .cancel-x
+    img.shadow-icon(data-src="cancel-x-btn")
+      
   .header= header
   .content !{content}
 
   //- 
   .delete-zone
-    a.cancel(href="#") Cancel
-    button.delete.lifecycle("data-content"=callToAction)
+    .btn.cancel Cancel
+    .btn.delete.lifecycle Delete

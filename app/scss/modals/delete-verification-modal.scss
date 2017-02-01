@@ -1,3 +1,5 @@
 .modal    {
-  .input  {width:100%; margin:12px 0px;}
+  .input  {width:100%; margin:12px 0px;
+    input {outline:solid 3px #00ADFE; height:35px; margin:10px 0; }
+  }
 }

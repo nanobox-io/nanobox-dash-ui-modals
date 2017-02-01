@@ -1,4 +1,8 @@
 @import '../lib/assets/core-styles/styles';
 
 //
-body{margin:0; padding:0; background:#dfdfdf;}
+body{margin:0; padding:0; background:#dfdfdf;
+  .modal-toggle{padding:4px 10px; cursor: pointer; color:#4D7999;
+    &:hover{color:#002D4E}
+  }
+}

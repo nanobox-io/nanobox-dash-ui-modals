@@ -12,10 +12,10 @@ window.init = () ->
       authorized: {
         modal:      "upgrade-required-modal",
         header:     "Plan Upgrade Required",
-        content:    "This action requires the [plan name] plan. Go to your app’s billing section to upgrade your plan.",
+        content:    "This action requires you to upgrade this app's plan.",
         authorized: true,
         onOpen:     onOpen,
-        onSubmit:   onSubmit,
+        onSubmit:   ()-> window.location = '/some/path/to/upgrade'
         onClose:    onClose
       },
       unauthorized: {

@@ -1,23 +1,10 @@
-view = require 'jade/modals/delete-confirmation-modal'
+view  = require 'jade/modals/delete-confirmation-modal'
+Modal = require 'modals/modal'
 
-#
-module.exports = class DeleteConfirmationModal
+module.exports = class DeleteConfirmationModal extends Modal
 
-  #
   constructor: (@$el, @options={}, @main) ->
-
-    #
     @options.callToAction ||= "Delete"
-
-    #
     @$node = $(view(@options))
     @$el.append @$node
-
-  #
-  build : () ->
-
-    #
-    @$node.find(".cancel").click (e) => @main.hide()
-
-    #
-    @$node.find("button.delete").click (e) => @main.submit(@options)
+    super()

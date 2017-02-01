@@ -1,4 +1,7 @@
 #delete-verification-modal.modal
+  .cancel-x
+    img.shadow-icon(data-src="cancel-x-btn")
+  
   .header= header
   .content !{content}
   .input
@@ -6,5 +9,5 @@
 
   //- 
   .delete-zone
-    a.cancel(href="#") Cancel
-    button.delete.lifecycle.disabled("data-content"=callToAction)
+    .btn.cancel(href="#") Cancel
+    .btn.delete.lifecycle.disabled Delete

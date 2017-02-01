@@ -1,9 +1,11 @@
 #action-confirmation-modal.modal
+  .cancel-x
+    img.shadow-icon(data-src="cancel-x-btn")
+      
   .header= header
   .content !{content}
 
   //- 
   .save-zone
-    a.cancel(href="#") Cancel
-    button.save.lifecycle("data-content"=callToAction)
-      img.shadow-icon("data-src"="check-mark")
+    .btn.cancel Cancel
+    .btn.lifecycle Continue

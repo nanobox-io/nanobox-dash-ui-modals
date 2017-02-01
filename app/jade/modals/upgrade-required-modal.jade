@@ -1,10 +1,12 @@
 #upgrade-required-modal.modal
+  .cancel-x
+    img.shadow-icon(data-src="cancel-x-btn")
+  
   .header= header
   .content !{content}
 
   //- 
   .save-zone
-    a.cancel(href="#") Cancel
-    unless authroized
-      button.save.lifecycle("data-content"=callToAction)
-        img.shadow-icon("data-src"="check-mark")
+    .btn.cancel(href="#") Cancel
+    if authorized
+      .btn.save.lifecycle Manage Plan
