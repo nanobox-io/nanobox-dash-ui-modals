@@ -33,6 +33,7 @@ window.init = () ->
         header:   "Delete [app-name]",
         content:  "Deleting this app will decommission all associated host machines and remove all code and data. Once complete, application data cannot be recovered. Are you sure you want to delete this app?",
         token:    "app.name"
+        onSubmit:   (e)-> console.log e, "delete"
       },
       dataComponent: {
         modal:    "delete-verification-modal",
