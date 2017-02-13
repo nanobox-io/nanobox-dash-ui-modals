@@ -9,7 +9,8 @@ module.exports = class DeleteVerificationModal extends Modal
     @$el.append @$node
     super()
 
-  # toggle the delete button based on the value in the input field. The idea here is that a person has to verify what they are deleting
+  # toggle the delete button based on the value in the input field. The idea
+  # here is that a person has to verify what they are deleting
   build : () ->
     super()
     $button = @$node.find(".btn.delete")
