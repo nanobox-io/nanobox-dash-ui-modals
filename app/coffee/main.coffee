@@ -71,7 +71,7 @@ class Modals
     @options.onOpen?()
 
   #
-  hide : () =>
+  hide : (doCallOnClose=true) =>
 
     # detach the modal
     @$modal.velocity {opacity:0}, {duration:150, complete:() => @$modal.detach()}
@@ -83,10 +83,11 @@ class Modals
     @$body.removeClass("no-scroll")
 
     #
-    @options.onClose?()
+    if doCallOnClose
+      @options.onClose?()
 
   #
-  submit : (options={}) => @options.onSubmit?(); @hide()
+  submit : (options={}) => @options.onSubmit?(); @hide(false)
 
 
 #
