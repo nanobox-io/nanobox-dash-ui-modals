@@ -38,9 +38,10 @@ class Modals
 
     # create the desired modal
     modal = switch @options.modal
-      when "delete-verification-modal" then new DeleteVerificationModal @$modal, @options, @
-      when "delete-confirmation-modal" then new DeleteConfirmationModal @$modal, @options, @
       when "action-confirmation-modal" then new ActionConfirmationModal @$modal, @options, @
+      when "delete-confirmation-modal" then new DeleteConfirmationModal @$modal, @options, @
+      when "delete-verification-modal" then new DeleteVerificationModal @$modal, @options, @
+      when "info-modal"                then new InfoModal @$modal, @options, @
       when "upgrade-required-modal"    then new UpgradeRequiredModal @$modal, @options, @
       else console.warn("Warning: #{options.modal} not found!")
 
