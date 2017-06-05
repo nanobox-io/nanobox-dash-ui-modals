@@ -7,7 +7,7 @@ module.exports = class UpgradeRequiredModal extends Modal
     super()
 
     #
-    @options.actionTxt ||= "Manage Plan"
+    @options.actionTxt ||= "Manage Upgrades"
     @options.cancelTxt ||= "Cancel"
 
     #
