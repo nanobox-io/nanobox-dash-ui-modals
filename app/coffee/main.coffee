@@ -1,8 +1,9 @@
 
 # modals
-DeleteVerificationModal = require 'modals/delete-verification-modal'
-DeleteConfirmationModal = require 'modals/delete-confirmation-modal'
 ActionConfirmationModal = require 'modals/action-confirmation-modal'
+DeleteConfirmationModal = require 'modals/delete-confirmation-modal'
+DeleteVerificationModal = require 'modals/delete-verification-modal'
+InfoModal               = require 'modals/info-modal'
 UpgradeRequiredModal    = require 'modals/upgrade-required-modal'
 
 #

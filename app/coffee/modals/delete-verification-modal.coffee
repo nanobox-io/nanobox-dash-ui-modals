@@ -1,13 +1,18 @@
-view  = require 'jade/modals/delete-verification-modal'
+view = require 'jade/modals/delete-verification-modal'
 Modal = require 'modals/modal'
 
 module.exports = class DeleteVerificationModal extends Modal
 
   constructor: (@$el, @options={}, @main) ->
-    @options.callToAction ||= "Delete"
+    super()
+
+    #
+    @options.actionTxt ||= "Delete"
+    @options.cancelTxt ||= "Cancel"
+
+    #
     @$node = $(view(@options))
     @$el.append @$node
-    super()
 
   # toggle the delete button based on the value in the input field. The idea
   # here is that a person has to verify what they are deleting

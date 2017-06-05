@@ -1,13 +1,13 @@
-view = require 'jade/modals/delete-confirmation-modal'
+view = require 'jade/modals/info-modal'
 Modal = require 'modals/modal'
 
-module.exports = class DeleteConfirmationModal extends Modal
+module.exports = class InfoModal extends Modal
 
   constructor: (@$el, @options={}, @main) ->
     super()
 
     #
-    @options.actionTxt ||= "Delete"
+    @options.actionTxt ||= "Continue"
     @options.cancelTxt ||= "Cancel"
 
     #

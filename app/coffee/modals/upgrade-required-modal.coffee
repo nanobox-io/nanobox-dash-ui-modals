@@ -4,7 +4,12 @@ Modal = require 'modals/modal'
 module.exports = class UpgradeRequiredModal extends Modal
 
   constructor: (@$el, @options={}, @main) ->
-    @options.callToAction ||= "Continue"
+    super()
+
+    #
+    @options.actionTxt ||= "Manage Plan"
+    @options.cancelTxt ||= "Cancel"
+
+    #
     @$node = $(view(@options))
     @$el.append @$node
-    super()

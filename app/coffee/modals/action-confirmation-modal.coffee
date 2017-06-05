@@ -4,7 +4,12 @@ Modal = require 'modals/modal'
 module.exports = class ActionConfirmationModal extends Modal
 
   constructor: (@$el, @options={}, @main) ->
-    @options.callToAction ||= "Continue"
+    super()
+
+    #
+    @options.actionTxt ||= "Continue"
+    @options.cancelTxt ||= "Cancel"
+
+    #
     @$node = $(view(@options))
     @$el.append @$node
-    super()

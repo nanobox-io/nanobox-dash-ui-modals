@@ -1,11 +1,11 @@
-#action-confirmation-modal.modal
+#info-modal.modal
   .cancel-x
     img.shadow-icon(data-src="cancel-x-btn")
-      
+  
   .header= header
   .content !{content}
 
   //- 
   .save-zone
-    .btn.basic.cancel !{cancelTxt}
-    .btn.basic.lifecycle.save !{actionTxt}
+    .btn.basic.cancel(href="#") !{cancelTxt}
+    .btn.basic.save.lifecycle !{actionTxt}

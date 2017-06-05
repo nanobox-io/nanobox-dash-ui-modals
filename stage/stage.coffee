@@ -8,6 +8,15 @@ window.init = () ->
   options = {
 
     #
+    info: {
+      unauthorized: {
+        modal:      "info-modal",
+        header:     "Unauthorized",
+        content:    "You're unauthorized to perform this action. If you feel like you should be able to do this, you'll have to let someone on your team know.",
+      }
+    },
+
+    #
     upgradeRequired: {
       authorized: {
         modal:      "upgrade-required-modal",
