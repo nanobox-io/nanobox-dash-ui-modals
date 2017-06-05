@@ -1,6 +1,6 @@
 {
   "name": "modals",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "dependencies": {
     "jquery": "^3.1.1",
     "velocity": "~1.1.0",
